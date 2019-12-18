@@ -1,0 +1,42 @@
+<h1 class="d-f jc-c">Handle-Burgers</h1>
+<img src="/public/assets/image/burger.png" class="w-100" />
+<div class="d-f jc-se">
+  <section>
+    <h2>Hot and Ready</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Eaten!</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block-eaten sleep=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </section>
+</div>
+
+<div class="d-f jc-c">
+  <section>
+    <h2>Order a Burger</h2>
+    <form class="create-form">
+
+      <div class="form-group">
+        <label for="burg">Type of Burger:</label>
+        <input type="text" id="burg" name="name">
+      </div>
+      <button type="submit">Add Burger</button>
+    </form>
+
+  </section>
+</div>
