@@ -4,9 +4,8 @@ const orm = {
   all: function(tableInput, cb) {
     const query = `SELECT * FROM  ${tableInput}`;
     connection.query(query, (err, result) => {
-      if (err) {
-        throw err;
-      }
+      if (err) throw err;
+
       cb(result);
     });
   },
@@ -15,9 +14,7 @@ const orm = {
     const queryString = `INSERT INTO ${table} (${col}) VALUES ("${val}")`;
 
     connection.query(queryString, (err, result) => {
-      if (err) {
-        throw err;
-      }
+      if (err) throw err;
 
       cb(result);
     });
